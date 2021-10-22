@@ -33,6 +33,17 @@ jobs:
           region: ${GOOGLE_REGION}
           service-name: '${GOOGLE_PROJECT_ID}'
           unauthenticated: true
+      
+      - run:
+          name: Webhook Success
+          command: bash .circleci/webhook_callback.sh "success"
+          when: on_success
+
+      - run:
+          name: Webhook Failed
+          command: bash .circleci/webhook_callback.sh "failure"
+          when: on_fail
+      
       - run:
           name: Call Webhook
           command:  |
