@@ -43,13 +43,6 @@ jobs:
           name: Webhook Failed
           command: bash .circleci/webhook_callback.sh "failure"
           when: on_fail
-      
-      - run:
-          name: Call Webhook
-          command:  |
-            echo 'Url'
-            echo $GCP_DEPLOY_ENDPOINT
-            curl $GCP_DEPLOY_ENDPOINT
 
 orbs:
   cloudrun: circleci/gcp-cloud-run@1.0.2
