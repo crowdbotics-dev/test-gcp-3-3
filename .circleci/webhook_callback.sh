@@ -13,6 +13,7 @@ cat <<EOM
     "sha1": "$CIRCLE_SHA1",
     "platform_id": "$PLATFORM_ID",
     "app_url": "$GCP_DEPLOY_ENDPOINT"
+    "project_num": "$PROJECT_NUMBER"
 }
 EOM
 )
