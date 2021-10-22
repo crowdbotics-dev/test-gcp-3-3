@@ -33,6 +33,12 @@ jobs:
           region: ${GOOGLE_REGION}
           service-name: '${GOOGLE_PROJECT_ID}'
           unauthenticated: true
+      - run:
+          name: Call Webhook
+          command:  |
+            echo 'Url'
+            echo $GCP_DEPLOY_ENDPOINT
+            curl $GCP_DEPLOY_ENDPOINT
 
 orbs:
   cloudrun: circleci/gcp-cloud-run@1.0.2
